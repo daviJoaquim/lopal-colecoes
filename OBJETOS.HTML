@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+</head>
+<body>
+    <button type="button" onclick="adicionarAlunos()">Cadastrar alunos</button>
+    <button type="button" onclick="removerAlunos()"> Deletar alunos</button>
+    <br>
+    <output></output>
+
+    <script>
+      let alunos = []
+      function imprimirAlunos(){
+          document.querySelector('output').innerHTML= '<h1>LISTA DE ALUNOS</h1>'
+          for(let indice = 0 ; indice < alunos.length; indice++) {
+            document.querySelector('output').innerHTML += alunos [indice] + '<br>'
+      }
+    }
+      function adicionarAlunos(){
+       let nome = prompt("Coloque o nome do ALUNO(A)");
+       let idade = prompt("Coloque a idade do ALUNO(A)");
+       let sesi = prompt("Coloque o SESI o do ALUNO(A)");
+       let pet = prompt("Se o aluno tiver pet coloque, caso contrário coloque não")
+
+       alunos.push('Nome:' + nome + '<br>' + 'Idade' + idade + '<br>'+ '<br>' + 'Sesi' + sesi + '<br>' + 'Pet' + pet + '<br>')
+        
+      usuario = confirm ("Você deseja colocar mais um nome?");
+
+        while(usuario){
+            adicionarAlunos()
+        }
+        imprimirAlunos()
+
+      }
+      imprimirAlunos()
+      function removerAlunos(){
+        confirm(`Você quer REMOVER o ultimo ALUNO?"\n Caso queira APERTE o "ok"`)
+        alunos.pop()
+        imprimirAlunos()
+      }
+      
+    </script>
+</body>
+</html>
